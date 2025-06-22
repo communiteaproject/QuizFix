@@ -1,0 +1,16 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+YOU ARE MAKING A QUIZ NIGHT APPLICATION
+there are 6 rounds, 10 questions each. 
+
+There are a few user roles of the application. 
+Quiz Host - this user will HOST trivia night at a bar. They will have a user experience to support hosting trivia night. This user can make up their own questions and save them to the local q&a database. They can purchase q&A packs (json files?) from our online shopify store and merge it with local q&A database. They can browse previous purchases and re-download them. They can put together a "Quiz Plan" for their trivia night which consists of the 6 rounds and any supporting images / videos that go along w/ the questions. 
+
+Quiz Team - this GROUP of users has a team name, and plays trivia at the bar. Linked to up to 6 team members. 
+
+Quiz Team Member - this is an individual user belonging to one of the trivia teams. The team members work together to answer the questions the host will provide. 
+
+YOUR GOAL IS TO BUILD THIS GAME COMPLETELY UNTIL IT IS OPERATING IN PRODUCTION. 
