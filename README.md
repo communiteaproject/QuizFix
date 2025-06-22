@@ -1,6 +1,6 @@
-# Local Trivia Game
+# QuizFix - Local Trivia Game
 
-This project provides a fully-local trivia night experience that can run on a Raspberry Pi or any Linux box. The backend is built with **FastAPI** and **SQLite**, exposing a REST / WebSocket API. A progressive-web-app (PWA) frontend will be added in a later step.
+This project provides a fully-local trivia night experience that can run on a Raspberry Pi or any Linux box. The backend is built with **FastAPI** and **SQLite**, exposing a REST / WebSocket API, and allows a host to build and plan Trivia Night. A progressive-web-app (PWA) frontend allows players to form teams and answer your questions. 
 
 ## Features (MVP)
 
@@ -18,34 +18,6 @@ This project provides a fully-local trivia night experience that can run on a Ra
 * Fast, offline-friendly—perfect for BYOD pub trivia without Internet.
 
 ## Getting started
-
-```bash
-# Clone the repo
-# git clone <repo-url> && cd zGame
-
-# Create a virtualenv
-python3 -m venv .venv
-source .venv/bin/activate
-
-# Install dependencies
-pip install -r backend/requirements.txt
-
-# Run the API (development)
-uvicorn backend.main:app --reload --host 0.0.0.0 --port 8000
-```
-
-You can now browse the automatically generated docs at http://localhost:8000/docs.
-
-## Production on Raspberry Pi
-
-Use `uvicorn` behind `systemd` or `supervisord`, or run with `gunicorn` and `uvicorn.workers.UvicornWorker`.
-
-```bash
-pip install "gunicorn[standard]"
-cd /home/pi/zGame
-gunicorn backend.main:app -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000 --workers 1
-```
-
 Add Caddy / Nginx if you want HTTPS on the local network.
 
 ## Raspberry Pi Deployment (One-click)
@@ -57,7 +29,7 @@ curl -sSL https://raw.githubusercontent.com/communiteaproject/zGame/main/scripts
 ```
 
 What the script does:
-1. Clones/updates the repo to `/home/pi/zGame`.
+1. Clones/updates the repo.
 2. Creates a Python venv and installs backend dependencies.
 3. Installs Node 20 (if missing), builds the React frontend, copies static files to the backend.
 4. Generates `trivia.service` under systemd so the game starts on boot (Uvicorn on :8000).
